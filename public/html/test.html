@@ -1,0 +1,21 @@
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+  function getTest() {
+    $.getJSON( "http://localhost:4000/api/test", function( data ) {
+        $.each( data, function( key, val ) {
+          $("#test_data").append("id : " + data[key].id);
+          $("#test_data").append("<br>");
+          $("#test_data").append("name : " + data[key].name);
+          $("#test_data").append("<br>");
+          $("#test_data").append("<br>");
+        });
+    });
+  }
+</script>
+
+
+<a href="javascript:getTest();">테스트 데이터 불러오기</a>
+<br />
+
+<div id="test_data"></div>
